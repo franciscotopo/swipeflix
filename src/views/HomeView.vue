@@ -1,18 +1,13 @@
+
 <template>
-  <HelloWorld />
+  <div class="text-center">
+    <h1>Bienvenido a la página de inicio</h1>
+    <p>Aquí puedes agregar el contenido principal de la Home.</p>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-
-// Components
-import HelloWorld from '../components/HelloWorld.vue';
-
-export default defineComponent({
-  name: 'HomeView',
-
-  components: {
-    HelloWorld,
-  },
-});
+export default {
+  name: 'HomeView'
+}
 </script>
