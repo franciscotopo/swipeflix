@@ -1,5 +1,8 @@
 <template>
   <v-container>
+
+    <h1 class="text-center my-4"> </h1>
+
     <v-card class="mx-auto" style="max-width: 500px">
       <v-overlay :value="isLoading">
         <v-progress-circular color="primary" indeterminate size="64">
@@ -85,13 +88,11 @@ export default {
           });
         }
 
-        this.$router.replace({ name: "home" });
+        this.$router.push({ name: "home" });
 
       } catch (error) {
-        if (error.code === "auth/wrong-password") {
-          this.errorMessage = "Contraseña incorrecta";
-        } else if (error.code === "auth/user-not-found") {
-          this.errorMessage = "Usuario no existente";
+        if (error.code === "auth/invalid-credential") {
+          this.errorMessage = "Usuario o contraseña incorrecta";
         } else {
           this.errorMessage = error.message || "Ha ocurrido un error inesperado!"
         }
