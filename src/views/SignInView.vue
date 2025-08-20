@@ -1,7 +1,7 @@
 <template>
   <v-container>
 
-    <h1 class="text-center my-4"> </h1>
+    <h1 class="text-center my-4"> Sign In </h1>
 
     <v-card class="mx-auto" style="max-width: 500px">
       <v-overlay :value="isLoading">
@@ -30,14 +30,14 @@
         >
         </v-text-field>
 
-        <v-alert v-if="errorMessage" border="top" color="red" class="nl-5 mr-5">
+        <v-alert v-if="errorMessage" border="top" color="#EA5534" class="nl-5 mr-5">
           {{ errorMessage }};
         </v-alert>
 
         <v-divider></v-divider>
 
         <v-card-actions>
-          <v-btn text @click="$refs.form.reset()">Clear</v-btn>
+          <v-btn text @click="$refs.form.reset()">Cancelar</v-btn>
           <v-spacer></v-spacer>
           <v-btn
             :disabled="!form"
@@ -45,11 +45,21 @@
             :loading="isLoading"
             depressed
             @click="signInWithUserAndPass"
-            >Sign In</v-btn
+            >Ingresar</v-btn
           >
         </v-card-actions>
       </v-form>
     </v-card>
+
+    <h2 class="text-center my-4" style="color:black;">
+      ¿Primera vez por acá?
+      
+      <router-link to="/sign-up" style="color:#EA5534; text-decoration:underline">
+        Registrate
+      </router-link>
+
+    </h2> 
+
   </v-container>
 </template>
 

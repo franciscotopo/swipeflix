@@ -1,5 +1,9 @@
 <template>
   <v-container>
+
+    <h1 class="text-center my-4"> Registrarse </h1>
+
+
     <v-card class="mx-auto" style="max-width: 500px">
       <v-overlay :value="isLoading">
         <v-progress-circular color="primary" indeterminate size="64">
@@ -37,14 +41,14 @@
         >
         </v-text-field>
 
-        <v-alert v-if="errorMessage" border="top" color="red" class="nl-5 mr-5">
+        <v-alert v-if="errorMessage" border="top" color="#EA5534" class="nl-5 mr-5">
           {{ errorMessage }};
         </v-alert>
 
         <v-divider></v-divider>
 
         <v-card-actions>
-          <v-btn text @click="$refs.form.reset()">Clear</v-btn>
+          <v-btn text @click="$refs.form.reset()">Cancelar</v-btn>
           <v-spacer></v-spacer>
           <v-btn
             :disabled="!form"
@@ -52,11 +56,21 @@
             :loading="isLoading"
             depressed
             @click="sigUpWithUserAndPass"
-            >Sign Up</v-btn
+            >Registrar</v-btn
           >
         </v-card-actions>
       </v-form>
     </v-card>
+
+    <h2 class="text-center my-4" style="color:black;">
+      Si ya tenes una cuenta 
+      
+      <router-link to="/" style="color:#EA5534; text-decoration:underline">
+        inicia sesión
+      </router-link>
+
+    </h2> 
+
   </v-container>
 </template>
 

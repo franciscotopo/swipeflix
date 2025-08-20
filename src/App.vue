@@ -18,7 +18,7 @@
       <v-spacer></v-spacer>
 
       <!-- Links de navegación -->
-      <v-btn variant="text" to="/">Inicio</v-btn>
+      <v-btn variant="text" to="/">Iniciar Sesión</v-btn>
       <v-btn variant="text" to="/about">Acerca</v-btn>
       <v-btn variant="text" href="https://vuetifyjs.com" target="_blank">Docs</v-btn>
     </v-app-bar>
