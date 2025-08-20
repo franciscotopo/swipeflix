@@ -78,7 +78,7 @@ export default {
     isLoading: false,
     showPassword: false,
     rules: {
-      required: (v) => !!v || "Este campo debe ser completado",
+      required: (v) => !!v || "Este campo debe ser completado"
     },
   }),
   methods: {
@@ -86,7 +86,7 @@ export default {
       this.isLoading = true;
       try {
         const auth = getAuth();
-        const authRes = await signInWithEmailAndPassword(auth, this.email, this.password);
+        const authRes = await signInWithEmailAndPassword(auth, this.email.toLowerCase(), this.password);
 
         const userDoc = await getDoc(doc(db, "users", authRes.user.uid));
 
@@ -105,7 +105,9 @@ export default {
       } catch (error) {
         if (error.code === "auth/invalid-credential") {
           this.errorMessage = "Usuario o contraseña incorrecta";
-        } else {
+        } else if (error.code == "auth/invalid-email") 
+          this.errorMessage = "Ingrese un mail correcto"
+        else { 
           this.errorMessage = error.message || "Ha ocurrido un error inesperado!"
         }
       }

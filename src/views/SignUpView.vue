@@ -107,7 +107,7 @@ export default {
         const auth = getAuth();
         const authRes = await createUserWithEmailAndPassword(
           auth,
-          this.email,
+          this.email.toLowerCase(),
           this.password
         );
 

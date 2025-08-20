@@ -19,6 +19,7 @@
 
       <!-- Links de navegación -->
       <v-btn variant="text" to="/">Iniciar Sesión</v-btn>
+      <v-btn v-if="userId" to="/add-partner" text>Invitar</v-btn>
       <v-btn variant="text" to="/about">Acerca</v-btn>
       <v-btn variant="text" href="https://vuetifyjs.com" target="_blank">Docs</v-btn>
     </v-app-bar>
@@ -32,6 +33,20 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+
+  components: {
+
+  },
+
+  data: () => ({
+
+  }),
+  computed: {
+    userId() {
+      return this.$store.state.user.id;
+    }
+  }
+
 }
 </script>
