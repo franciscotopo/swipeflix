@@ -69,6 +69,7 @@ import { db } from "../main.js";
 import { doc, getDoc } from "firebase/firestore";
 
 export default {
+  name: 'SignInView',
   data: () => ({
     email: "",
     password: "",
@@ -95,6 +96,7 @@ export default {
             id: authRes.user.uid,
             name: userData.name,
             email: userData.email,
+            partnerId: userData.partnerId || ''
           });
         }
 

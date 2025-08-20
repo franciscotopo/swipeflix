@@ -122,6 +122,7 @@ export default {
           id: authRes.user.uid,
           name: this.name,
           email: this.email,
+          partnerId: ''
         });
 
         this.$router.replace({
