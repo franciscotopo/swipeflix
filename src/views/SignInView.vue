@@ -96,7 +96,8 @@ export default {
             id: authRes.user.uid,
             name: userData.name,
             email: userData.email,
-            partnerId: userData.partnerId || ''
+            partnerId: userData.partnerId || '',
+            movieApiPage: userData.movieApiPage || 1
           });
         }
 
