@@ -42,7 +42,9 @@ export default {
     async fetchMovie(page=1) {
 
       const myApiKey = process.env.VUE_APP_TMDB_API_KEY;
-      const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&vote_average.gte=3&api_key=${myApiKey}`;
+      const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&api_key=${myApiKey}&vote_average.gte=7.7`;
+      
+                   
 
       const res = await axios.get(url);                 //Obtengo resultado 
 
