@@ -6,7 +6,7 @@ const state = {
     name: null,
     email: null,
     partnerId: null,
-    movieApiPage: 1
+    movieApiPage: 1,
 }
 
 //Para modificar el estado "state". Recibe un payload y asigno campos al estado.
