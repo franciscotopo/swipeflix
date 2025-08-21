@@ -13,12 +13,12 @@ loadFonts()
 
 // Configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyCm6j9pOP36GEo2VAe5TxRqL9RYGB9WN3U",
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
   authDomain: "pichosfilms.firebaseapp.com",
   projectId: "pichosfilms",
   storageBucket: "pichosfilms.firebasestorage.app",
-  messagingSenderId: "141695518371",
-  appId: "1:141695518371:web:1943ce5aca345b603e6116"
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID
 };
 
 // Inicializa Firebase
